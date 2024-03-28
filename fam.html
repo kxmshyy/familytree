@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Family Tree</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+    
+    body {
+        background-color: #d7ccc8;
+        height: 100vh;
+        display: grid;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .tree {
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+    
+    .tree ul {
+        padding-top: 20px;
+        position: relative;
+        transition: .5s;
+    }
+    
+    .tree li {
+        display: inline-table;
+        text-align: center;
+        list-style-type: none;
+        position: relative;
+        padding: 10px;
+        transition: .5s;
+    }
+    
+    .tree li:only-child::after, .tree li:only-child::before {
+        display: none;
+    }
+    
+    .tree li:only-child {
+        padding-top: 0;
+    }
+    
+    .tree li:first-child::before, .tree li:last-child::after {
+        border: 0 none;
+    }
+
+    .tree li:first-child::after {
+        border-radius: 5px 0 0 0;
+        -webkit-border-radius: 5px 0 0 0;
+        -moz-border-radius: 5px 0 0 0;
+    }
+    
+    .tree li a {
+        border: 2px solid #a1887f;
+        padding: 10px;
+        display: inline-grid;
+        border-radius: 5px;
+        text-decoration-line: none;
+        border-radius: 5px;
+        transition: .3s;
+    }
+    
+    .tree li a img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px !important;
+        border-radius: 100px;
+        margin: auto;
+
+    }
+    
+    .tree li a span {
+        border: 1px solid #a1887f;
+        border-radius: 5px;
+        color: black;
+        padding: 8px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 500;
+    }
+    
+    /*Hover-Section*/
+    .tree li a:hover, .tree li a:hover i, .tree li a:hover span, .tree li a:hover+ul li a {
+        background:  #bcaaa4;
+        color: #000;
+        border: 2px solid #94a0b4;
+    }
+    
+    .tree li a:hover+ul li::after, .tree li a:hover+ul li::before, .tree li a:hover+ul::before, .tree li a:hover+ul ul::before {
+        border-color: #94a0b4;
+    }
+
+
+</style>
+</head>
+<body>
+
+<div class="tree">
+    <ul>
+        <li>
+            <a href="#">
+                <img src="missing.jpg" border="2" style="border-color: #a1887f" alt="Grandfather">
+                <img src="apuP.jpg" border="2" style="border-color: #a1887f" alt="Grandmother">
+                <span>Grandparents</span>
+            </a>
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="dad.jpg " border="2" style="border-color: #a1887f" alt="Father">
+                        <span>Father</span>
+                    </a>
+                </li>
+            </ul>
+            <li>
+            <a href="#">
+                <img src="lolo.jpg" border="2" style="border-color: #a1887f" alt="Grandfather">
+                <img src="apuL.jpg" border="2" style="border-color: #a1887f" alt="Grandmother">
+                <span>Grandparents</span>
+            </a>
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="mama.jpg" border="2" style="border-color: #a1887f" alt="Mother">
+                        <span>Mother</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <a href="#">
+                <img src="me.jpg" border="2" style="border-color: #a1887f" alt="Daughter">
+                <span>Daughter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

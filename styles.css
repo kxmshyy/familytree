@@ -1,0 +1,125 @@
+body {
+    background-color: #d7ccc8;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+
+    
+}
+
+.tree {
+    --dark: #333;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 -90px;
+    position: relative;
+    max-width: max-content;
+}
+
+.node:not(.node--root) > .node__element::before {
+    content: '';
+    height: 20px;
+    width: 1px;
+    background-color: #916d60;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -20px;
+    margin: auto;
+}
+
+.node.node--left {
+    margin-right: 110px;
+}
+
+.node.node--right {
+    margin-left: 110px;
+}
+
+.node__element {
+    cursor: pointer;
+    border: 3px solid transparent;
+    height: 150px;
+    border-color: #916d60;
+    background-color: #a1887f;
+    border-radius: 15px;
+    min-width: 140px;
+    max-width: max-content;
+    padding: 4px 8px;
+    font-size: 12px;
+    line-height: 32px;
+    text-align: center;
+
+}
+
+
+.node__bottom-line {
+    height: 20px;
+    width: 1px;
+    background-color: #916d60;
+}
+
+.node__element, .node__element::before, .node__children, .node__bottom-line {
+    transition: all ease 0.01s;
+}
+
+.node__children {
+    display: flex;
+    padding: 20px;
+    border-top: 1px solid #916d60;
+}
+
+.node__element:hover {
+    border-color: #916d60;
+    background:  #bcaaa4;
+    color: #000;
+    
+}
+
+.node__element:hover ~ .node__children .node__element::before {
+    width: 1px;
+    background:  #916d60;
+    color: #916d60;
+    border: 1px solid #916d60;
+}
+
+.node__element:hover ~ .node__bottom-line,
+.node__element:hover ~ .node__children .node__bottom-line {
+    width: 2px;
+    background-color: #916d60;
+}
+
+.node__element:hover ~ .node__children,
+.node__element:hover ~ .node__children .node__children {
+    border-top-width: 2px;
+    border-color: #916d60;
+    transition: all ease 0.01s;
+}
+
+.node__text {
+    font-size: 14px;
+    color: #333; 
+    margin-top: 5px; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    justify-content: center;
+    font-weight: bold;
+  }
+
+  header {
+    background-color: #a1887f;
+    color: #efebe9;
+    padding: 1px 0;
+    font-family: arial black;
+}
+  
